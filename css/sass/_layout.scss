@@ -308,3 +308,273 @@ $gutter: 32px;
 //////////////////////////////////////////////////////////
 
 
+.bg-slider{
+  width: 100%;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: 1s ease;
+
+  z-index: -1;
+
+  &::after{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg, 
+    rgba(4, 12, 27, 0.99) 5%, 
+    rgba(4, 12, 27, 0.75) 35%, 
+    rgba(4, 12, 27, 0.99) 95%);
+  }
+}
+
+.text-spider{
+  position: absolute;
+  top: 32%;
+  left: 50%;
+
+  text-shadow: 0px 10px 32px rgba(0, 0, 0, 0.60);
+
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  @include responsive(s){
+    top: 21%;
+    left: 50%;
+  }
+}
+
+.img-slider{
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  transform: translate(-50%, -50%);
+
+  transition: 1.4s ease;
+
+  @include responsive(l){
+    width: 140%;
+  }
+
+  @include responsive(m){
+    width: 120%;
+  }
+
+  @include responsive(s){
+    width: 300%;
+  }
+
+}
+
+.img-spider{
+  display: block;
+
+  transform: scale(1.4);
+  transition: 1s ease;
+
+  @include responsive(s){
+    transform: scale(2.3);
+  }
+}
+
+.div-spider{
+  position: absolute;
+  top: 16%;
+  left: 0%;
+
+  //transform: translate(-50%, -50%);
+
+  @include responsive(s){
+    top: 18%;
+    left: 0%;
+  }
+}
+
+.cta{
+  max-width: 360px;
+  padding: 7px 0px;
+
+  position: absolute;
+  top: 60%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+
+  @include responsive(s){
+    top: 84%;
+    left: 50%;
+
+    max-width: 300px;
+  }
+
+  &::before{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0%;
+
+    width: 75%;
+    height: 100%;
+
+    background: rgba(35, 44, 62, 0.6);
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(17, 25, 41, 0.4);
+
+    border-radius: 4px;
+    transform: skewX(-7deg);
+    transition: .4s ease;
+    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.4);
+  }
+
+  &:hover{
+    &::before{
+      backdrop-filter: blur(2px);
+      transform: skewX(-7deg) scale(1.05);
+    }
+  }
+}
+
+.social{
+  position: absolute;
+
+  top: 50%;
+  left: 5%;
+  
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img{
+    padding: 4px;
+    margin: 20px;
+  }
+
+  @include responsive(s){
+    display: none;
+  }
+}
+
+.div-ps{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive(s){
+    top: 88%;
+    left: 50%;
+  }
+}
+
+.div-trailer{
+  position: absolute;
+
+  top: 57%;
+  left: 51%;
+
+  cursor: pointer;
+
+  @include responsive(s){
+    top: 48%;
+    left: 45%;
+  }
+
+  &:hover{
+    #text-trailer{
+      left: 80%;
+    }
+
+    .circle-play{
+      backdrop-filter: blur(2px);
+      transform: scale(1.25);
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .div-trailer{
+    border: 5px solid red;
+
+  }
+}
+
+#text-trailer{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-0%, -50%) skewX(-7deg);
+  transition: .4s ease;
+}
+
+.circle-play{
+  width: 116px;
+  height: 116px;
+  display: block;
+
+  border-radius: 50%;
+
+  background: rgba(35, 44, 62, 0.6);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(17, 25, 41, 0.5);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);
+
+  transition: .7s ease;
+  position: relative;
+
+  &::after{
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 36px;
+    height: 36px;
+
+    background-image: url('../../svg/icon-play.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  @include responsive(s){
+    width: 80px;
+    height: 80px;
+
+    &::after{
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.icon-social{
+  &:hover{
+    img{
+      transform: translate3d(0,-4px,0);
+    }
+  }
+}
+

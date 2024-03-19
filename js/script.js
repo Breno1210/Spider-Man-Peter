@@ -59,11 +59,10 @@ function changeBackground(){
 //console.log(images[0]);
 
 /*--=========== GSAP SCROLLTRIGGER ============- */
-gsap.registerPlugin(ScrollTrigger);
+/* gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /*--=========== TIMELINE LOADING E HERO ============- */
 
   var tl1 = gsap.timeline();
     
@@ -102,3 +101,4 @@ document.addEventListener("DOMContentLoaded", () => {
 ScrollTrigger.addEventListener("scrollStart", () => {
   ScrollTrigger.refresh();
 });
+ */
