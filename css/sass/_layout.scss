@@ -11,45 +11,51 @@ $gutter: 32px;
 // Mixin of media-queries
 @mixin responsive($device) {
 
-  @if $device == xl {
+  @if $device ==xl {
+
     // For resolutions upper 1440px
     @media screen and (min-width: $container-xl) {
       @content;
     }
-  } 
+  }
 
-  @else if $device == ul {
+  @else if $device ==ul {
+
     // For resolutions upper 1268px
     @media screen and (min-width: $container-l) {
       @content;
     }
-  } 
-  
-  @else if $device == l {
+  }
+
+  @else if $device ==l {
+
     // For resolutions between 1440px and 1268px
     @media screen and (max-width: $container-xl) and (min-width: $container-l) {
       @content;
     }
-  } 
-  
-  
-  @else if $device == m {
+  }
+
+
+  @else if $device ==m {
+
     // For resolutions between 1268px and 620px
     @media screen and (max-width: $container-l) and (min-width: $container-s) {
       @content;
     }
-  } 
-  
-  
-  @else if $device == s {
+  }
+
+
+  @else if $device ==s {
+
     // For resolutions less than 960px
     @media screen and (max-width: $container-m) {
       @content;
     }
-  } 
-  
-  
-  @else if $device == xs {
+  }
+
+
+  @else if $device ==xs {
+
     // For resolutions less than 340px
     @media screen and (max-width: $container-xs) {
       @content;
@@ -58,33 +64,33 @@ $gutter: 32px;
 }
 
 
-@function grid($col, $total: 12){
+@function grid($col, $total: 12) {
   @return (calc($col / $total)) * 100%;
 }
 
 
-@for $i from 1 through 12{
-  .grid-#{$i}{
-      width: calc(#{grid($i)} - #{$gutter});
-      margin: calc($gutter / 2);
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: calc($gutter / 2);
 
-      padding: 16px 0px;
-      float: left;
+    padding: 16px 0px;
+    float: left;
 
-      @include responsive(s){
-          width: calc(100% - #{$gutter});
-          float: none;
-      }
+    @include responsive(s) {
+      width: calc(100% - #{$gutter});
+      float: none;
+    }
   }
 }
 
-@for $i from 1 through 12{
-  .grid-nobreak-#{$i}{
-      width: calc(#{grid($i)} - #{$gutter});
-      margin: calc($gutter / 2);
+@for $i from 1 through 12 {
+  .grid-nobreak-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: calc($gutter / 2);
 
-      padding: 16px 0px;
-      float: left;
+    padding: 16px 0px;
+    float: left;
   }
 }
 
@@ -102,7 +108,7 @@ $gutter: 32px;
   //position: sticky;
 
   // clearfix
-  &::after{
+  &::after {
     content: '';
     display: table;
     clear: both;
@@ -115,34 +121,35 @@ $gutter: 32px;
   }
 }
 
-.disappear{
-  @include responsive(s){
+.disappear {
+  @include responsive(s) {
     display: none;
   }
 }
 
-.hidden{
+.hidden {
   overflow: hidden;
 }
 
-.zindex-1{
+.zindex-1 {
   z-index: -1;
 }
 
-.row{
+.row {
+
   // clearfix
-  &::after{
+  &::after {
     content: '';
     display: table;
     clear: both;
   }
 }
 
-.h-100{
+.h-100 {
   height: 100vh;
 }
 
-.h-100p{
+.h-100p {
   height: 100%;
 }
 
@@ -158,6 +165,7 @@ $gutter: 32px;
   flex-direction: row;
 
 }
+
 .flex-end-row {
   display: flex;
   justify-content: flex-end;
@@ -165,6 +173,7 @@ $gutter: 32px;
   flex-direction: row;
 
 }
+
 .flex-start-column {
   display: flex;
   justify-content: center;
@@ -192,7 +201,7 @@ $gutter: 32px;
   align-items: center;
   flex-direction: row;
 
-  @include responsive(s){
+  @include responsive(s) {
     //flex-direction: column;
     //align-items: flex-start;
   }
@@ -239,57 +248,62 @@ $gutter: 32px;
 .w-auto {
   width: auto;
 }
+
 .h-auto {
   height: auto !important;
 }
+
 .w-100 {
   width: 100%;
 }
+
 .w-75 {
   width: 75%;
 }
+
 .w-50 {
   width: 50%;
 }
+
 .w-25 {
   width: 25%;
 }
 
 
-.bb-black{
+.bb-black {
   border-bottom: 1px solid $black-light;
 }
 
-.bt-black{
+.bt-black {
   border-top: 1px solid $black-light;
 }
 
-.bl-black{
+.bl-black {
   border-left: 1px solid $black-light;
 }
 
-.br-black{
+.br-black {
   border-right: 1px solid $black-light;
 }
 
 
-.bg-gray{
+.bg-gray {
   background-color: $black-normal;
 }
 
-.bb-gray{
+.bb-gray {
   border-bottom: 2px solid $black-normal;
 }
 
-.bt-gray{
+.bt-gray {
   border-top: 2px solid $black-normal;
 }
 
-.bl-gray{
+.bl-gray {
   border-left: 2px solid $black-normal;
 }
 
-.br-gray{
+.br-gray {
   border-right: 2px solid $black-normal;
 }
 
@@ -308,7 +322,7 @@ $gutter: 32px;
 //////////////////////////////////////////////////////////
 
 
-.bg-slider{
+.bg-slider {
   width: 100%;
   height: 100vh;
 
@@ -320,7 +334,7 @@ $gutter: 32px;
 
   z-index: -1;
 
-  &::after{
+  &::after {
     content: '';
 
     position: absolute;
@@ -330,14 +344,14 @@ $gutter: 32px;
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(180deg, 
-    rgba(4, 12, 27, 0.99) 5%, 
-    rgba(4, 12, 27, 0.75) 35%, 
-    rgba(4, 12, 27, 0.99) 95%);
+    background: linear-gradient(180deg,
+        rgba(4, 12, 27, 0.99) 5%,
+        rgba(4, 12, 27, 0.75) 35%,
+        rgba(4, 12, 27, 0.99) 95%);
   }
 }
 
-.text-spider{
+.text-spider {
   position: absolute;
   top: 32%;
   left: 50%;
@@ -347,13 +361,13 @@ $gutter: 32px;
   transform: translate(-50%, -50%);
   z-index: -1;
 
-  @include responsive(s){
+  @include responsive(s) {
     top: 21%;
     left: 50%;
   }
 }
 
-.img-slider{
+.img-slider {
   width: 100%;
 
   position: absolute;
@@ -365,45 +379,45 @@ $gutter: 32px;
 
   transition: 1.4s ease;
 
-  @include responsive(l){
+  @include responsive(l) {
     width: 140%;
   }
 
-  @include responsive(m){
+  @include responsive(m) {
     width: 120%;
   }
 
-  @include responsive(s){
+  @include responsive(s) {
     width: 300%;
   }
 
 }
 
-.img-spider{
+.img-spider {
   display: block;
 
   transform: scale(1.4);
   transition: 1s ease;
 
-  @include responsive(s){
+  @include responsive(s) {
     transform: scale(2.3);
   }
 }
 
-.div-spider{
+.div-spider {
   position: absolute;
   top: 16%;
   left: 0%;
 
   //transform: translate(-50%, -50%);
 
-  @include responsive(s){
+  @include responsive(s) {
     top: 18%;
     left: 0%;
   }
 }
 
-.cta{
+.cta {
   max-width: 360px;
   padding: 7px 0px;
 
@@ -412,14 +426,14 @@ $gutter: 32px;
   left: 27%;
   transform: translate(-50%, -50%);
 
-  @include responsive(s){
+  @include responsive(s) {
     top: 84%;
     left: 50%;
 
     max-width: 300px;
   }
 
-  &::before{
+  &::before {
     content: '';
 
     position: absolute;
@@ -439,20 +453,20 @@ $gutter: 32px;
     box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.4);
   }
 
-  &:hover{
-    &::before{
+  &:hover {
+    &::before {
       backdrop-filter: blur(2px);
       transform: skewX(-7deg) scale(1.05);
     }
   }
 }
 
-.social{
+.social {
   position: absolute;
 
   top: 50%;
   left: 5%;
-  
+
   transform: translate(-50%, -50%);
 
   display: flex;
@@ -460,17 +474,17 @@ $gutter: 32px;
   align-items: center;
   flex-direction: column;
 
-  img{
+  img {
     padding: 4px;
     margin: 20px;
   }
 
-  @include responsive(s){
+  @include responsive(s) {
     display: none;
   }
 }
 
-.div-ps{
+.div-ps {
   position: absolute;
   top: 90%;
   left: 50%;
@@ -480,13 +494,13 @@ $gutter: 32px;
   justify-content: center;
   align-items: center;
 
-  @include responsive(s){
+  @include responsive(s) {
     top: 88%;
     left: 50%;
   }
 }
 
-.div-trailer{
+.div-trailer {
   position: absolute;
 
   top: 57%;
@@ -494,17 +508,17 @@ $gutter: 32px;
 
   cursor: pointer;
 
-  @include responsive(s){
+  @include responsive(s) {
     top: 48%;
     left: 45%;
   }
 
-  &:hover{
-    #text-trailer{
+  &:hover {
+    #text-trailer {
       left: 80%;
     }
 
-    .circle-play{
+    .circle-play {
       backdrop-filter: blur(2px);
       transform: scale(1.25);
     }
@@ -512,13 +526,13 @@ $gutter: 32px;
 }
 
 @media screen and (max-width: 960px) {
-  .div-trailer{
+  .div-trailer {
     border: 5px solid red;
 
   }
 }
 
-#text-trailer{
+#text-trailer {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -527,7 +541,7 @@ $gutter: 32px;
   transition: .4s ease;
 }
 
-.circle-play{
+.circle-play {
   width: 116px;
   height: 116px;
   display: block;
@@ -542,7 +556,7 @@ $gutter: 32px;
   transition: .7s ease;
   position: relative;
 
-  &::after{
+  &::after {
     content: '';
 
     position: absolute;
@@ -559,22 +573,133 @@ $gutter: 32px;
     background-size: cover;
   }
 
-  @include responsive(s){
+  @include responsive(s) {
     width: 80px;
     height: 80px;
 
-    &::after{
+    &::after {
       width: 26px;
       height: 26px;
     }
   }
 }
 
-.icon-social{
-  &:hover{
-    img{
-      transform: translate3d(0,-4px,0);
+.icon-social {
+  &:hover {
+    img {
+      transform: translate3d(0, -4px, 0);
     }
   }
 }
 
+.screen-loading {
+  width: 100%;
+  height: 100vh;
+  background-color: $black-dark;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loader-spider {
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    backdrop-filter: blur(0px);
+
+    width: 100%;
+    height: 300%;
+
+    background: linear-gradient(180deg, rgba(4, 12, 27, 0) 0%, #040C1B 60%);
+
+    animation: loader-spider 3s ease forwards;
+  }
+}
+
+@keyframes loader-spider {
+  0% {
+    top: -150%;
+    left: 0;
+    backdrop-filter: blur(16px);
+  }
+
+  100% {
+    top: 00%;
+    left: 0%;
+    backdrop-filter: blur(0px);
+  }
+}
+
+.nav-points {
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%) rotate(90deg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive(s) {
+    top: 65%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.point {
+  width: 36px;
+  height: 36px;
+
+  margin: 2px 16px;
+  cursor: pointer;
+
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 16%;
+    height: 16%;
+    border-radius: 50%;
+
+    background-color: rgba(248, 251, 255, 0.3);
+    transition: .4s ease;
+  }
+
+  &:hover {
+    &::after {
+      background-color: rgba(248, 251, 255, 0.65);
+    }
+  }
+}
+
+.active-point {
+  &::after {
+
+    width: 40%;
+    height: 40%;
+
+    background-color: rgba(248, 251, 255, 0.99);
+  }
+}
